@@ -4,26 +4,15 @@
     <projectFile>GeneticPcb/GeneticPcb.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="display soldering points">
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Route.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Segment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Tests/PathTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Tests/RouteTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb/Models/DisplaySegment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb/Views/SegmentsView.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GeneticPcb/Views/SolderingPointsView.axaml" afterDir="false" />
+    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="start displaying segments">
+      <change afterPath="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.sln" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/GeneticPcb.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/GeneticPcb.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/Models/PcbBoard.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/Models/DisplaySegment.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/Views/SegmentsView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Views/SegmentsView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/Views/SolderingPointsView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Views/SolderingPointsView.axaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +40,6 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" />
-      <option value="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Models/PcbBoard.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Tests/PathTests.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Tests/RouteTests.cs" />
@@ -61,10 +49,12 @@
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Point.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Views/SegmentsView.axaml" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/SolderingPointsView.axaml" />
-      <option value="$PROJECT_DIR$/GeneticPcb/Views/SegmentsView.axaml" />
-      <option value="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1peK7reM9cM5L1IEIc1rp5o2XkZ" />
@@ -76,6 +66,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35005066" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
@@ -113,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615537952631</updated>
       <workItem from="1615537961904" duration="3985000" />
-      <workItem from="1615543908786" duration="6915000" />
+      <workItem from="1615543908786" duration="10662000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1615537973125</created>
@@ -143,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615545453923</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="start displaying segments">
+      <created>1615552271029</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615552271029</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -161,12 +159,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="update workspace.xml" />
     <MESSAGE value="draw pcb" />
     <MESSAGE value="display soldering points" />
-    <option name="LAST_COMMIT_MESSAGE" value="display soldering points" />
+    <MESSAGE value="start displaying segments" />
+    <option name="LAST_COMMIT_MESSAGE" value="start displaying segments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

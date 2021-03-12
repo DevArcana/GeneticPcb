@@ -24,7 +24,7 @@
         <Panel Background="Green" />
         <Panel Background="{DynamicResource PcbGrid}" />
         
-        <views:SolderingPointsView/>
         <views:SegmentsView/>
+        <views:SolderingPointsView/>
     </Panel>
 </UserControl>

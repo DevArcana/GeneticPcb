@@ -2,14 +2,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:models="clr-namespace:GeneticPcb.Core.Models;assembly=GeneticPcb.Core"
              xmlns:converters="clr-namespace:GeneticPcb.Converters"
+             xmlns:models="clr-namespace:GeneticPcb.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="GeneticPcb.Views.SolderingPointsView">
     <UserControl.Resources>
         <VisualBrush x:Key="SolderingPoint" TileMode="Tile" SourceRect="0,0,32,32" DestinationRect="0,0,32,32">
             <VisualBrush.Visual>
-                <Path Data="m 10 10 h 12 v 12 h -12 v -12" Fill="#003300" />
+                <Path Data="m 10 10 h 12 v 12 h -12 v -12" Fill="#99ff99" />
             </VisualBrush.Visual>
         </VisualBrush>
         
@@ -31,8 +31,15 @@
         </ItemsControl.ItemsPanel>
         
         <ItemsControl.DataTemplates>
-            <DataTemplate DataType="{x:Type models:BoardPoint}">
-                <Rectangle Width="32" Height="32" Fill="{DynamicResource SolderingPoint}"></Rectangle>
+            <DataTemplate DataType="{x:Type models:SolderingPoint}">
+                <Panel Width="32" Height="32" Background="{DynamicResource SolderingPoint}">
+                    <TextBlock 
+                        ClipToBounds="False"
+                        TextAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="12"
+                        Text="{Binding Name}" />
+                </Panel>
             </DataTemplate>
         </ItemsControl.DataTemplates>
     </ItemsControl>

@@ -7,19 +7,13 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="GeneticPcb.Views.SegmentsView">
     <UserControl.Resources>
-        <VisualBrush x:Key="Segment" TileMode="Tile" SourceRect="0,0,32,32" DestinationRect="0,0,32,32">
-            <VisualBrush.Visual>
-                <Path Data="m 10 10 h 12 v 12 h -12 v -12" Fill="White" />
-            </VisualBrush.Visual>
-        </VisualBrush>
-        
         <converters:PcbDimensionsConverter x:Key="PcbDimensionsConverter" />
     </UserControl.Resources>
     
     <UserControl.Styles>
         <Style Selector="ItemsControl > ContentPresenter">
-            <Setter Property="Canvas.Left" Value="{Binding Start.X, Converter={StaticResource PcbDimensionsConverter}, Mode=OneWay}"/>
-            <Setter Property="Canvas.Top" Value="{Binding Start.Y, Converter={StaticResource PcbDimensionsConverter}, Mode=OneWay}"/>
+            <Setter Property="Canvas.Left" Value="{Binding X, Mode=OneWay}"/>
+            <Setter Property="Canvas.Top" Value="{Binding Y, Mode=OneWay}"/>
         </Style>
     </UserControl.Styles>
     
@@ -31,8 +25,11 @@
         </ItemsControl.ItemsPanel>
         
         <ItemsControl.DataTemplates>
-            <DataTemplate DataType="{x:Type models:DisplaySegment}">
-                <Rectangle Width="32" Height="32" Fill="{DynamicResource Segment}"></Rectangle>
+            <DataTemplate DataType="{x:Type models:SegmentRectangle}">
+                <Rectangle 
+                    Width="{Binding Width}"
+                    Height="{Binding Height}"
+                    Fill="#99ff99" />
             </DataTemplate>
         </ItemsControl.DataTemplates>
     </ItemsControl>
