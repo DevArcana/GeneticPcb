@@ -18,7 +18,15 @@ namespace GeneticPcb.ViewModels
 
         public MainWindowViewModel()
         {
-            _pcbBoard = new PcbBoard(32, 24);
+            var solderingPoints = new SolderingPoint[]
+            {
+                // new(0, 0),
+                // new(1, 1),
+                // new(2, 2),
+                new(4, 16)
+            };
+            
+            _pcbBoard = new PcbBoard(32, 24, solderingPoints);
         }
     }
 }
