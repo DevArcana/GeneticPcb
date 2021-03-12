@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticPcb", "GeneticPcb\GeneticPcb.csproj", "{3024DE4A-2A04-4F27-B9B5-5989328E7A21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticPcb.Tests", "GeneticPcb.Tests\GeneticPcb.Tests.csproj", "{1C8A4785-27B7-470E-8B87-F84A42D60E42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticPcb.Core", "GeneticPcb.Core\GeneticPcb.Core.csproj", "{D1D5B843-F8E8-45D9-AE73-2B91328E675B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{3024DE4A-2A04-4F27-B9B5-5989328E7A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3024DE4A-2A04-4F27-B9B5-5989328E7A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3024DE4A-2A04-4F27-B9B5-5989328E7A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C8A4785-27B7-470E-8B87-F84A42D60E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C8A4785-27B7-470E-8B87-F84A42D60E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C8A4785-27B7-470E-8B87-F84A42D60E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C8A4785-27B7-470E-8B87-F84A42D60E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D5B843-F8E8-45D9-AE73-2B91328E675B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D5B843-F8E8-45D9-AE73-2B91328E675B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D5B843-F8E8-45D9-AE73-2B91328E675B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D5B843-F8E8-45D9-AE73-2B91328E675B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

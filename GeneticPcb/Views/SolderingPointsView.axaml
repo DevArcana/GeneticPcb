@@ -1,0 +1,39 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:GeneticPcb.Core.Models;assembly=GeneticPcb.Core"
+             xmlns:converters="clr-namespace:GeneticPcb.Converters"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="GeneticPcb.Views.SolderingPointsView">
+    <UserControl.Resources>
+        <VisualBrush x:Key="SolderingPoint" TileMode="Tile" SourceRect="0,0,32,32" DestinationRect="0,0,32,32">
+            <VisualBrush.Visual>
+                <Path Data="m 10 10 h 12 v 12 h -12 v -12" Fill="#003300" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+        
+        <converters:PcbDimensionsConverter x:Key="PcbDimensionsConverter" />
+    </UserControl.Resources>
+    
+    <UserControl.Styles>
+        <Style Selector="ItemsControl > ContentPresenter">
+            <Setter Property="Canvas.Left" Value="{Binding X, Converter={StaticResource PcbDimensionsConverter}, Mode=OneWay}"/>
+            <Setter Property="Canvas.Top" Value="{Binding Y, Converter={StaticResource PcbDimensionsConverter}, Mode=OneWay}"/>
+        </Style>
+    </UserControl.Styles>
+    
+    <ItemsControl Items="{Binding SolderingPoints}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        
+        <ItemsControl.DataTemplates>
+            <DataTemplate DataType="{x:Type models:BoardPoint}">
+                <Rectangle Width="32" Height="32" Fill="{DynamicResource SolderingPoint}"></Rectangle>
+            </DataTemplate>
+        </ItemsControl.DataTemplates>
+    </ItemsControl>
+</UserControl>

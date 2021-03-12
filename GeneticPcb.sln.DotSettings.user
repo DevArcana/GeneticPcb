@@ -1,0 +1,7 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=701a7bd4_002D94ed_002D42ce_002Db630_002D33d21162fda4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="EndCoordinatesUpdateCorrectly" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1C8A4785-27B7-470E-8B87-F84A42D60E42::net5.0::GeneticPcb.Tests.PathTests.EndCoordinatesUpdateCorrectly&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1C8A4785-27B7-470E-8B87-F84A42D60E42::net5.0::GeneticPcb.Tests.RouteTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

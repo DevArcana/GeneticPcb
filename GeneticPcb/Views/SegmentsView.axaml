@@ -1,0 +1,39 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:GeneticPcb.Converters"
+             xmlns:models="clr-namespace:GeneticPcb.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="GeneticPcb.Views.SegmentsView">
+    <UserControl.Resources>
+        <VisualBrush x:Key="Segment" TileMode="Tile" SourceRect="0,0,32,32" DestinationRect="0,0,32,32">
+            <VisualBrush.Visual>
+                <Path Data="m 10 10 h 12 v 12 h -12 v -12" Fill="White" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+        
+        <converters:PcbDimensionsConverter x:Key="PcbDimensionsConverter" />
+    </UserControl.Resources>
+    
+    <UserControl.Styles>
+        <Style Selector="ItemsControl > ContentPresenter">
+            <Setter Property="Canvas.Left" Value="{Binding Start.X, Converter={StaticResource PcbDimensionsConverter}, Mode=OneWay}"/>
+            <Setter Property="Canvas.Top" Value="{Binding Start.Y, Converter={StaticResource PcbDimensionsConverter}, Mode=OneWay}"/>
+        </Style>
+    </UserControl.Styles>
+    
+    <ItemsControl Items="{Binding Segments}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        
+        <ItemsControl.DataTemplates>
+            <DataTemplate DataType="{x:Type models:DisplaySegment}">
+                <Rectangle Width="32" Height="32" Fill="{DynamicResource Segment}"></Rectangle>
+            </DataTemplate>
+        </ItemsControl.DataTemplates>
+    </ItemsControl>
+</UserControl>
