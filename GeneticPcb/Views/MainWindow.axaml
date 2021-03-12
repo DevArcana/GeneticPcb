@@ -3,6 +3,8 @@
         xmlns:vm="using:GeneticPcb.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:GeneticPcb.Converters"
+        xmlns:views="clr-namespace:GeneticPcb.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="GeneticPcb.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -11,7 +13,18 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    
+    <Window.Resources>
+        <VisualBrush x:Key="CheckerBoard" TileMode="Tile" SourceRect="0,0,20,20" DestinationRect="0,0,20,20">
+            <VisualBrush.Visual>
+                <Path Data="M 0,0 L 0,10 L 10,10 L 10,0 Z M 10,10 L 10,20 L 20,20 L 20,10 Z" Fill="#FFF0F0F0" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Window.Resources>
+    
+    <Panel>
+        <Panel Background="#FFF5F5F5" />
+        <Panel Background="{DynamicResource CheckerBoard}" />
+        <views:PcbBoardView/>
+    </Panel>
 </Window>

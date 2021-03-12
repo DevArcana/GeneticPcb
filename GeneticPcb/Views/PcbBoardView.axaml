@@ -1,0 +1,24 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:GeneticPcb.Converters"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="GeneticPcb.Views.PcbBoardView">
+    <UserControl.Resources>
+        <VisualBrush x:Key="PcbGrid" TileMode="Tile" SourceRect="0,0,32,32" DestinationRect="0,0,32,32">
+            <VisualBrush.Visual>
+                <Path Data="m 8 8 h 16 v 16 h -16 v -16" Fill="#009900" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+        
+        <converters:PcbDimensionsConverter x:Key="PcbDimensionsConverter" />
+    </UserControl.Resources>
+    
+    <Panel
+        Width="{Binding PcbBoard.Width, Converter={StaticResource PcbDimensionsConverter}}"
+        Height="{Binding PcbBoard.Height, Converter={StaticResource PcbDimensionsConverter}}">
+        <Panel Background="Green" />
+        <Panel Background="{DynamicResource PcbGrid}" />
+    </Panel>
+</UserControl>
