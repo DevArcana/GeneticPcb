@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:GeneticPcb.Views"
+        xmlns:panAndZoom="clr-namespace:Avalonia.Controls.PanAndZoom;assembly=Avalonia.Controls.PanAndZoom"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="GeneticPcb.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -21,9 +22,28 @@
         </VisualBrush>
     </Window.Resources>
     
-    <Panel>
-        <Panel Background="#FFF5F5F5" />
-        <Panel Background="{DynamicResource CheckerBoard}" />
-        <views:PcbBoardView/>
-    </Panel>
+    <DockPanel>
+        <Panel>
+            <Panel Background="#FFF5F5F5" />
+            <Panel Background="{DynamicResource CheckerBoard}" />
+        
+            <Panel ClipToBounds="True">
+                <ScrollViewer x:Name="EditAreaScrollViewer" HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Auto">
+                    <panAndZoom:ZoomBorder x:Name="EditAreaZoomBorder"
+                                           Stretch="None"
+                                           ZoomSpeed="1.2"
+                                           PanButton="Middle"
+                                           EnablePan="True"
+                                           EnableZoom="True"
+                                           Background="Transparent"
+                                           ClipToBounds="False"
+                                           VerticalAlignment="Stretch"
+                                           HorizontalAlignment="Stretch">
+                        <views:PcbBoardView HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </panAndZoom:ZoomBorder>
+                </ScrollViewer>
+            </Panel>
+        </Panel>
+    </DockPanel>
 </Window>
