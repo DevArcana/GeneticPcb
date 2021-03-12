@@ -21,6 +21,8 @@ namespace GeneticPcb
                 {
                     DataContext = new MainWindowViewModel(),
                 };
+
+                HackyUglySingleton.MainWindow = desktop.MainWindow;
             }
 
             base.OnFrameworkInitializationCompleted();

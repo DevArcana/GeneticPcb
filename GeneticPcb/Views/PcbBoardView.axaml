@@ -3,8 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:GeneticPcb.Converters"
-             xmlns:models="clr-namespace:GeneticPcb.Core.Models;assembly=GeneticPcb.Core"
-             xmlns:models1="clr-namespace:GeneticPcb.Models"
              xmlns:views="clr-namespace:GeneticPcb.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="GeneticPcb.Views.PcbBoardView">
@@ -19,8 +17,8 @@
     </UserControl.Resources>
     
     <Panel
-        Width="{Binding CircuitBoard.Width, Converter={StaticResource PcbDimensionsConverter}, Mode=OneTime}"
-        Height="{Binding CircuitBoard.Height, Converter={StaticResource PcbDimensionsConverter}, Mode=OneTime}">
+        Width="{Binding CircuitBoard.Width, Converter={StaticResource PcbDimensionsConverter}, Mode=OneWay}"
+        Height="{Binding CircuitBoard.Height, Converter={StaticResource PcbDimensionsConverter}, Mode=OneWay}">
         <Panel Background="Green" />
         <Panel Background="{DynamicResource PcbGrid}" />
         

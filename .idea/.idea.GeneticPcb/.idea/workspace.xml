@@ -4,10 +4,13 @@
     <projectFile>GeneticPcb/GeneticPcb.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="improve display of soldering points">
+    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="add pan and zoooooom">
+      <change afterPath="$PROJECT_DIR$/GeneticPcb/HackyUglySingleton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/GeneticPcb.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/GeneticPcb.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +30,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3964ECCD-63C1-4D6B-A9F0-7FA8F889C77A/34/IReactiveObjectExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/6A/InpcPropertyAccessorPlugin.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/56/BindingExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/piotr/source/repos/GeneticPcb/GeneticPcb/Views/MainWindow.axaml" root0="SKIP_HIGHLIGHTING" />
@@ -44,12 +48,14 @@
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Point.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/SegmentsView.axaml" />
       <option value="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/SolderingPointsView.axaml" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" />
+      <option value="$PROJECT_DIR$/GeneticPcb/HackyUglySingleton.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/App.axaml.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" />
+      <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1peK7reM9cM5L1IEIc1rp5o2XkZ" />
@@ -99,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615537952631</updated>
       <workItem from="1615537961904" duration="3985000" />
-      <workItem from="1615543908786" duration="10960000" />
+      <workItem from="1615543908786" duration="13637000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1615537973125</created>
@@ -143,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615560027430</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add pan and zoooooom">
+      <created>1615560324063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615560324063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -169,25 +182,7 @@
     <MESSAGE value="display soldering points" />
     <MESSAGE value="start displaying segments" />
     <MESSAGE value="improve display of soldering points" />
-    <option name="LAST_COMMIT_MESSAGE" value="improve display of soldering points" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs</url>
-          <line>12</line>
-          <properties documentPath="C:\Users\piotr\source\repos\GeneticPcb\GeneticPcb\Converters\PcbDimensionsConverter.cs" initialLine="12" containingFunctionPresentation="method 'Convert'">
-            <startOffsets>
-              <option value="345" />
-            </startOffsets>
-            <endOffsets>
-              <option value="385" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="add pan and zoooooom" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pan and zoooooom" />
   </component>
 </project>
