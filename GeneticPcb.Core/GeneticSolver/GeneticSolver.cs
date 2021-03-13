@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using GeneticPcb.Core.Models;
 
@@ -27,19 +28,66 @@ namespace GeneticPcb.Core.GeneticSolver
       return boards;
     }
 
+    private CircuitBoard[] Selection(CircuitBoard[] population)
+    {
+      // tournament, best out of k participants
+      foreach (var circuitBoard in population)
+      {
+        circuitBoard.CalculateFitness();
+      }
+
+      var selected = new List<CircuitBoard>(population.Length);
+
+      while (selected.Count < population.Length)
+      {
+        var winner = population[_random.Next(0, population.Length)];
+
+        for (var i = population.Length / 8; i > 1; i--)
+        {
+          var candidate = population[_random.Next(0, population.Length)];
+          if (candidate.Fitness < winner.Fitness)
+          {
+            winner = candidate;
+          }
+        }
+        
+        selected.Add(winner);
+      }
+      
+      return selected.ToArray();
+    }
+
+    private CircuitBoard[] Crossover(CircuitBoard[] population)
+    {
+      return population;
+    }
+
+    private CircuitBoard[] Mutation(CircuitBoard[] population)
+    {
+      return population;
+    }
+    
     public CircuitBoard Solve(int generations, int populationSize)
     {
       var population = CreateInitialPopulation(populationSize);
 
+      var solutions = new List<CircuitBoard>(generations);
+
       while (generations > 0)
       {
         generations--;
-        // TODO: Test performance
-        population = CreateInitialPopulation(populationSize);
+        population = Selection(population);
+        population = Crossover(population);
+        population = Mutation(population);
+        
+        var bestInPopulationFitness = population.Min(x => x.CalculateFitness());
+        var bestInPopulation = population.FirstOrDefault(x => x.Fitness == bestInPopulationFitness);
+        
+        solutions.Add(bestInPopulation);
       }
-
-      var maxFitness = population.Max(x => x.CalculateFitness());
-      return population.FirstOrDefault(x => x.Fitness == maxFitness);
+      
+      var bestFitness = solutions.Min(x => x.Fitness);
+      return solutions.FirstOrDefault(x => x.Fitness == bestFitness);
     }
   }
 }

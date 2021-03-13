@@ -100,7 +100,9 @@ namespace GeneticPcb.Core.Models
 
                 if (!route.IsConnected)
                 {
-                    fitness += 1000;
+                    var dx = (long) route.End.X - route.Path.End.X;
+                    var dy = (long) route.End.Y - route.Path.End.Y;
+                    fitness += 1000 * (dx*dx + dy*dy);
                 }
             }
 

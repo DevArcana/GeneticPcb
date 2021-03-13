@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="add pan and zoooooom">
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +27,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/siepikr/source/repos/GeneticPcb/GeneticPcb.Core/Models/CircuitBoard.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -48,9 +46,9 @@
       <option value="$PROJECT_DIR$/GeneticPcb/HackyUglySingleton.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/App.axaml.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" />
-      <option value="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" />
+      <option value="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" />
     </changedPaths>
   </component>
@@ -151,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615560324063</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="display fitness function">
+      <created>1615656112080</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615656112080</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,20 +186,21 @@
     <MESSAGE value="start displaying segments" />
     <MESSAGE value="improve display of soldering points" />
     <MESSAGE value="add pan and zoooooom" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pan and zoooooom" />
+    <MESSAGE value="display fitness function" />
+    <option name="LAST_COMMIT_MESSAGE" value="display fitness function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs</url>
-          <line>106</line>
+          <line>108</line>
           <properties documentPath="C:\Users\siepikr\source\repos\GeneticPcb\GeneticPcb.Core\Models\CircuitBoard.cs" initialLine="105" containingFunctionPresentation="method 'CalculateFitness'">
             <startOffsets>
-              <option value="3564" />
+              <option value="3718" />
             </startOffsets>
             <endOffsets>
-              <option value="3602" />
+              <option value="3756" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
