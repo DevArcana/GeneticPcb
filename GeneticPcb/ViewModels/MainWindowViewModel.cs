@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using DynamicData;
+using GeneticPcb.Core.GeneticSolver;
 using GeneticPcb.Core.Models;
 using GeneticPcb.Models;
 using ReactiveUI;
@@ -150,6 +151,14 @@ namespace GeneticPcb.ViewModels
 
                 CircuitBoard = new CircuitBoard(width, height, routes.ToArray());
             }
+        }
+
+        public void SolveGenetically()
+        {
+            var random = new Random(13);
+            var solver = new GeneticSolver(random, CircuitBoard);
+
+            CircuitBoard = solver.Solve(1000, 100);
         }
     }
 }

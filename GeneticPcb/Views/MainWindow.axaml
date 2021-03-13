@@ -27,7 +27,15 @@
             <MenuItem Header="_File">
                 <MenuItem Header="_Open PCB specification" Command="{Binding LoadPcbSpecification}"/>
             </MenuItem>
+            
+            <MenuItem Header="_Solve">
+                <MenuItem Header="_Genetic Algorithm" Command="{Binding SolveGenetically}"/>
+            </MenuItem>
         </Menu>
+        
+        <StackPanel DockPanel.Dock="Left">
+            <TextBlock Text="{Binding CircuitBoard.Fitness}" />
+        </StackPanel>
         
         <Panel>
             <Panel Background="#FFF5F5F5" />
