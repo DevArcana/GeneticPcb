@@ -4,17 +4,9 @@
     <projectFile>GeneticPcb/GeneticPcb.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="implement more methods for Path.cs">
+    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="fix bugs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/Segment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Segment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +31,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/E2/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/6A/InpcPropertyAccessorPlugin.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/56/BindingExpression.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/piotr/source/repos/GeneticPcb/GeneticPcb.Core/Models/BoardPoint.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/5A/ExpressionObserver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/piotr/source/repos/GeneticPcb/GeneticPcb.Core/Models/CircuitBoard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/901D0287-899F-4379-87F8-8FB13D3BE845/A/AppBuilderBase.cs" root0="SKIP_HIGHLIGHTING" />
@@ -61,12 +54,12 @@
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Segment.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1peK7reM9cM5L1IEIc1rp5o2XkZ" />
@@ -180,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615747650122</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix bugs">
+      <created>1615752068460</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615752068460</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +212,8 @@
     <MESSAGE value="add pan and zoooooom" />
     <MESSAGE value="display fitness function" />
     <MESSAGE value="implement more methods for Path.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement more methods for Path.cs" />
+    <MESSAGE value="fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

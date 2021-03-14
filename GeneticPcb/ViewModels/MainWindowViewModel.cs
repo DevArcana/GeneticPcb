@@ -159,7 +159,7 @@ namespace GeneticPcb.ViewModels
             var random = new Random(13);
             var solver = new GeneticSolver(random, CircuitBoard);
 
-            CircuitBoard = solver.Solve(1000, 100);
+            CircuitBoard = solver.Solve(10000   , 100);
         }
     }
 }

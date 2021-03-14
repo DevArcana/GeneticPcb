@@ -59,6 +59,24 @@ namespace GeneticPcb.Core.GeneticSolver
 
     private CircuitBoard[] Crossover(CircuitBoard[] population)
     {
+      for (var i = 0; i < population.Length - 1; i += 2)
+      {
+        var mom = population[i];
+        var dad = population[i + 1];
+
+        for (int j = 0; j < mom.Routes.Length; j++)
+        {
+          var shouldSwap = _random.Next() % 2 == 0;
+
+          if (shouldSwap)
+          {
+            var route = dad.Routes[j];
+            dad.Routes[j] = mom.Routes[j];
+            mom.Routes[j] = route;
+          }
+        }
+      }
+      
       return population;
     }
 
@@ -70,7 +88,7 @@ namespace GeneticPcb.Core.GeneticSolver
         {
           var shouldMutate = _random.Next(0, 100);
 
-          if (shouldMutate <= 80) continue;
+          // if (shouldMutate <= 50) continue;
           
           var mutationType = _random.Next();
 
