@@ -50,10 +50,10 @@ namespace GeneticPcb.ViewModels
                     {
                         BoardPoint endPoint = direction switch
                         {
-                            Direction.UP => currentPoint with {Y = currentPoint.Y - length},
-                            Direction.DOWN => currentPoint with {Y = currentPoint.Y + length},
-                            Direction.RIGHT => currentPoint with {X = currentPoint.X + length},
-                            Direction.LEFT => currentPoint with {X = currentPoint.X - length},
+                            Direction.Up => currentPoint with {Y = currentPoint.Y - length},
+                            Direction.Down => currentPoint with {Y = currentPoint.Y + length},
+                            Direction.Right => currentPoint with {X = currentPoint.X + length},
+                            Direction.Left => currentPoint with {X = currentPoint.X - length},
                             _ => null
                         } ?? throw new InvalidOperationException("Invalid segment detected!");
 
@@ -65,21 +65,21 @@ namespace GeneticPcb.ViewModels
 
                         const uint diff = 14;
 
-                        if (direction == Direction.UP)
+                        if (direction == Direction.Up)
                         {
                             y -= length;
                             height = length + 1;
                         }
-                        else if (direction == Direction.DOWN)
+                        else if (direction == Direction.Down)
                         {
                             height = length + 1;
                         }
-                        else if (direction == Direction.LEFT)
+                        else if (direction == Direction.Left)
                         {
                             x -= length;
                             width = length + 1;
                         }
-                        else if (direction == Direction.RIGHT)
+                        else if (direction == Direction.Right)
                         {
                             width = length + 1;
                         }
@@ -110,8 +110,8 @@ namespace GeneticPcb.ViewModels
             };
 
             var path = routes[0].Path;
-            path.AddSegment(Direction.UP, 3);
-            path.AddSegment(Direction.RIGHT, 1);
+            path.AddSegment(Direction.Up, 3);
+            path.AddSegment(Direction.Right, 1);
             
             SolderingPoints = new ObservableCollection<SolderingPoint>();
             Segments = new ObservableCollection<SegmentRectangle>();
@@ -132,8 +132,8 @@ namespace GeneticPcb.ViewModels
 
                 var dimensions = contents[0].Split(";");
 
-                var width = uint.Parse(dimensions[0]);
-                var height = uint.Parse(dimensions[1]);
+                var width = int.Parse(dimensions[0]);
+                var height = int.Parse(dimensions[1]);
 
                 var routes = new List<Route>();
 

@@ -14,10 +14,10 @@ namespace GeneticPcb.Tests
             var path = route.Path;
             Assert.That(route.IsConnected, Is.False);
             
-            path.AddSegment(Direction.UP, 3);
+            path.AddSegment(Direction.Up, 3);
             Assert.That(route.IsConnected, Is.False);
             
-            path.AddSegment(Direction.RIGHT, 1);
+            path.AddSegment(Direction.Right, 1);
             Assert.That(route.IsConnected, Is.True);
         }
     }

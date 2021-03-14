@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="add pan and zoooooom">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Tests/PathTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Tests/PathTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Tests/RouteTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Tests/RouteTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +32,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/siepikr/source/repos/GeneticPcb/GeneticPcb.Core/Models/CircuitBoard.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3964ECCD-63C1-4D6B-A9F0-7FA8F889C77A/34/IReactiveObjectExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/6A/InpcPropertyAccessorPlugin.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/56/BindingExpression.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/5A/ExpressionObserver.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -46,10 +54,12 @@
       <option value="$PROJECT_DIR$/GeneticPcb/HackyUglySingleton.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/App.axaml.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" />
-      <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1peK7reM9cM5L1IEIc1rp5o2XkZ" />
@@ -195,14 +205,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs</url>
           <line>108</line>
-          <properties documentPath="C:\Users\siepikr\source\repos\GeneticPcb\GeneticPcb.Core\Models\CircuitBoard.cs" initialLine="105" containingFunctionPresentation="method 'CalculateFitness'">
-            <startOffsets>
-              <option value="3718" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3756" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\siepikr\source\repos\GeneticPcb\GeneticPcb.Core\Models\CircuitBoard.cs" initialLine="105" containingFunctionPresentation="method 'CalculateFitness'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

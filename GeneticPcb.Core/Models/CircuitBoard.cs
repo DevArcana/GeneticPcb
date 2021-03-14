@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace GeneticPcb.Core.Models
 {
-    public sealed record CircuitBoard (uint Width, uint Height, Route[] Routes)
+    public sealed record CircuitBoard (int Width, int Height, Route[] Routes)
     {
         public long Fitness { get; private set; }
         
@@ -38,7 +38,7 @@ namespace GeneticPcb.Core.Models
                 {
                     switch (segment.Direction)
                     {
-                        case Direction.UP:
+                        case Direction.Up:
                         {
                             for (var i = 1; i <= segment.Length; i++)
                             {
@@ -48,7 +48,7 @@ namespace GeneticPcb.Core.Models
 
                             break;
                         }
-                        case Direction.DOWN:
+                        case Direction.Down:
                         {
                             for (var i = 1; i <= segment.Length; i++)
                             {
@@ -58,7 +58,7 @@ namespace GeneticPcb.Core.Models
 
                             break;
                         }
-                        case Direction.LEFT:
+                        case Direction.Left:
                         {
                             for (var i = 1; i <= segment.Length; i++)
                             {
@@ -68,7 +68,7 @@ namespace GeneticPcb.Core.Models
 
                             break;
                         }
-                        case Direction.RIGHT:
+                        case Direction.Right:
                         {
                             for (var i = 1; i <= segment.Length; i++)
                             {
