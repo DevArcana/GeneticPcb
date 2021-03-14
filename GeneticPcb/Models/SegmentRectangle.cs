@@ -1,4 +1,4 @@
 ﻿namespace GeneticPcb.Models
 {
-    public record SegmentRectangle(uint X, uint Y, uint Width, uint Height);
+    public record SegmentRectangle(int X, int Y, int Width, int Height);
 }

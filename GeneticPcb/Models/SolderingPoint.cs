@@ -1,4 +1,4 @@
 ﻿namespace GeneticPcb.Models
 {
-    public record SolderingPoint(uint X, uint Y, string Name);
+    public record SolderingPoint(int X, int Y, string Name);
 }

@@ -28,53 +28,90 @@ namespace GeneticPcb.Core.Models
         private int CountIntersections()
         {
             var matrix = new byte[Width * Height];
+            var outOfBounds = 0;
 
             foreach (var route in Routes)
             {
                 var current = route.Path.Start;
                 matrix[current.X + current.Y * Width]++;
                 
-                foreach (var segment in route.Path.Segments)
+                foreach (var (direction, length) in route.Path.Segments)
                 {
-                    switch (segment.Direction)
+                    switch (direction)
                     {
                         case Direction.Up:
                         {
-                            for (var i = 1; i <= segment.Length; i++)
+                            for (var i = 1; i <= length; i++)
                             {
-                                matrix[current.X + (current.Y - i) * Width]++;
+                                var index = current.X + (current.Y - i) * Width;
+
+                                if (index < 0 || index >= matrix.Length)
+                                {
+                                    outOfBounds++;
+                                }
+                                else
+                                {
+                                    matrix[index]++;
+                                }
                             }
-                            current = current with {Y = current.Y - segment.Length};
+                            current = current with {Y = current.Y - length};
 
                             break;
                         }
                         case Direction.Down:
                         {
-                            for (var i = 1; i <= segment.Length; i++)
+                            for (var i = 1; i <= length; i++)
                             {
-                                matrix[current.X + (current.Y + i) * Width]++;
+                                var index = current.X + (current.Y + i) * Width;
+                                
+                                if (index < 0 || index >= matrix.Length)
+                                {
+                                    outOfBounds++;
+                                }
+                                else
+                                {
+                                    matrix[index]++;
+                                }
                             }
-                            current = current with {Y = current.Y + segment.Length};
+                            current = current with {Y = current.Y + length};
 
                             break;
                         }
                         case Direction.Left:
                         {
-                            for (var i = 1; i <= segment.Length; i++)
+                            for (var i = 1; i <= length; i++)
                             {
-                                matrix[current.X - i + current.Y * Width]++;
+                                var index = current.X - i + current.Y * Width;
+                                
+                                if (index < 0 || index >= matrix.Length)
+                                {
+                                    outOfBounds++;
+                                }
+                                else
+                                {
+                                    matrix[index]++;
+                                }
                             }
-                            current = current with {X = current.X - segment.Length};
+                            current = current with {X = current.X - length};
 
                             break;
                         }
                         case Direction.Right:
                         {
-                            for (var i = 1; i <= segment.Length; i++)
+                            for (var i = 1; i <= length; i++)
                             {
-                                matrix[current.X + i + current.Y * Width]++;
+                                var index = current.X + i + current.Y * Width;
+                                
+                                if (index < 0 || index >= matrix.Length)
+                                {
+                                    outOfBounds++;
+                                }
+                                else
+                                {
+                                    matrix[index]++;
+                                }
                             }
-                            current = current with {X = current.X + segment.Length};
+                            current = current with {X = current.X + length};
 
                             break;
                         }
@@ -84,7 +121,7 @@ namespace GeneticPcb.Core.Models
                 }
             }
             
-            return matrix.Count(x => x > 1);
+            return matrix.Count(x => x > 1) + outOfBounds;
         }
 
         public long CalculateFitness() {

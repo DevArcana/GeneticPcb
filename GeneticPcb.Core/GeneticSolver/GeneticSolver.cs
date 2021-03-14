@@ -51,7 +51,7 @@ namespace GeneticPcb.Core.GeneticSolver
           }
         }
         
-        selected.Add(winner);
+        selected.Add(winner.Copy());
       }
       
       return selected.ToArray();
@@ -64,6 +64,60 @@ namespace GeneticPcb.Core.GeneticSolver
 
     private CircuitBoard[] Mutation(CircuitBoard[] population)
     {
+      foreach (var genome in population)
+      {
+        foreach (var route in genome.Routes)
+        {
+          var shouldMutate = _random.Next(0, 100);
+
+          if (shouldMutate <= 80) continue;
+          
+          var mutationType = _random.Next();
+
+          if (mutationType % 2 == 0)
+          {
+            // insert segment
+            if (route.IsConnected)
+            {
+              var direction = (Direction) _random.Next(0, 4);
+              var where = _random.Next(0, route.Path.Segments.Count);
+
+              var length = direction switch
+              {
+                Direction.Up => route.Path.End.Y,
+                Direction.Down => _board.Height - route.Path.End.Y,
+                Direction.Left => route.Path.End.X,
+                Direction.Right => _board.Width - route.Path.End.X,
+                _ => 0
+              };
+
+              route.Path.InsertSegment(where, direction, _random.Next(1, length), true);
+            }
+            else
+            {
+              var direction = route.Path.End.GetDirection(route.End);
+              var where = _random.Next(0, route.Path.Segments.Count);
+
+              var length = direction switch
+              {
+                Direction.Up => route.Path.End.Y,
+                Direction.Down => _board.Height - route.Path.End.Y,
+                Direction.Left => route.Path.End.X,
+                Direction.Right => _board.Width - route.Path.End.X,
+                _ => 0
+              };
+
+              route.Path.InsertSegment(where, direction, _random.Next(1, length));
+            }
+          }
+          else if (route.Path.Segments.Any())
+          {
+            // delete segment
+            route.Path.DeleteSegment(_random.Next(0, route.Path.Segments.Count), route.IsConnected);
+          }
+        }
+      }
+      
       return population;
     }
     

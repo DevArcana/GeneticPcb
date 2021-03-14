@@ -24,7 +24,7 @@ namespace GeneticPcb.Core.Models
             };
         }
 
-        public static Direction GetDirection(BoardPoint from, BoardPoint to)
+        public static Direction GetDirection(this BoardPoint from, BoardPoint to)
         {
             var dx = to.X - from.X;
             var dy = to.Y - from.Y;

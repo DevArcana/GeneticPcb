@@ -62,6 +62,8 @@ namespace GeneticPcb.Core.Models
                         _segments.RemoveAt(i - 1);
                         i -= 2;
                         count -= 2;
+
+                        previous = i == -1 ? null : _segments[i];
                     }
                     else
                     {
@@ -69,9 +71,16 @@ namespace GeneticPcb.Core.Models
                         _segments[i - 1] = previous;
                         
                         _segments.RemoveAt(i);
-                        i--;
+                        
+                        i -= 2;
                         count--;
+                        
+                        previous = i == -1 ? null : _segments[i];
                     }
+                }
+                else
+                {
+                    previous = segment;
                 }
             }
         }
@@ -107,8 +116,13 @@ namespace GeneticPcb.Core.Models
             Recalculate();
         }
         
-        public void InsertSegment(int i, Direction direction, uint length, bool conserveEnd = false)
+        public void InsertSegment(int i, Direction direction, int length, bool conserveEnd = false)
         {
+            if (length <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(length), length, "Length must be positive!");
+            }
+            
             _segments.Insert(i, new Segment(direction, length));
 
             if (conserveEnd)
@@ -120,44 +134,21 @@ namespace GeneticPcb.Core.Models
             Recalculate();
         }
 
-        public void AddSegment(Direction direction, uint length)
+        public void AddSegment(Direction direction, int length)
         {
             if (length <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(length), length, "Length must be a positive value!");
+                throw new ArgumentOutOfRangeException(nameof(length), length, "Length must be positive!");
             }
 
-            switch (direction)
+            End = direction switch
             {
-                case Direction.Down:
-                    End = End with { Y = End.Y + length };
-                    break;
-                case Direction.Up:
-                    if (length > End.Y)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(length),
-                            length,
-                            "You can not have a segment of length 0 or below!");
-                    }
-
-                    End = End with { Y = End.Y - length };
-                    break;
-                case Direction.Right:
-                    End = End with { X = End.X + length };
-                    break;
-                case Direction.Left:
-                    if (length > End.X)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(length),
-                            length,
-                            "The X coordinate must not be negative!");
-                    }
-
-                    End = End with { X = End.X - length };
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(direction), direction, "Invalid direction.");
-            }
+                Direction.Down => End with {Y = End.Y + length},
+                Direction.Up => End with {Y = End.Y - length},
+                Direction.Right => End with {X = End.X + length},
+                Direction.Left => End with {X = End.X - length},
+                _ => throw new ArgumentOutOfRangeException(nameof(direction), direction, "Invalid direction.")
+            };
 
             _segments.Add(new Segment(direction, length));
         }

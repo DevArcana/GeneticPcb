@@ -4,14 +4,17 @@
     <projectFile>GeneticPcb/GeneticPcb.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="add pan and zoooooom">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/indexLayout.xml" afterDir="false" />
+    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="implement more methods for Path.cs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Tests/PathTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Tests/PathTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Tests/RouteTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Tests/RouteTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/Segment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/Segment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,33 +36,37 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3964ECCD-63C1-4D6B-A9F0-7FA8F889C77A/34/IReactiveObjectExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/E2/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/6A/InpcPropertyAccessorPlugin.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/56/BindingExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/5A/ExpressionObserver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/piotr/source/repos/GeneticPcb/GeneticPcb.Core/Models/CircuitBoard.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/901D0287-899F-4379-87F8-8FB13D3BE845/A/AppBuilderBase.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/GeneticPcb/Models/PcbBoard.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Tests/PathTests.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Tests/RouteTests.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Models/CircuitBoard.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Class1.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Point.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/SegmentsView.axaml" />
-      <option value="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/SolderingPointsView.axaml" />
       <option value="$PROJECT_DIR$/GeneticPcb/HackyUglySingleton.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/App.axaml.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/PcbBoardView.axaml" />
       <option value="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" />
+      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Segment.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Direction.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Models/SegmentRectangle.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Models/SolderingPoint.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1peK7reM9cM5L1IEIc1rp5o2XkZ" />
@@ -73,7 +80,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35005066" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -166,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615656112080</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="implement more methods for Path.cs">
+      <created>1615747650122</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615747650122</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,19 +211,10 @@
     <MESSAGE value="improve display of soldering points" />
     <MESSAGE value="add pan and zoooooom" />
     <MESSAGE value="display fitness function" />
-    <option name="LAST_COMMIT_MESSAGE" value="display fitness function" />
+    <MESSAGE value="implement more methods for Path.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement more methods for Path.cs" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs</url>
-          <line>108</line>
-          <properties documentPath="C:\Users\siepikr\source\repos\GeneticPcb\GeneticPcb.Core\Models\CircuitBoard.cs" initialLine="105" containingFunctionPresentation="method 'CalculateFitness'" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
         <watch expression="current.EqualityContract" />

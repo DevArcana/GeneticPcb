@@ -43,7 +43,7 @@ namespace GeneticPcb.ViewModels
                 {
                     var path = route.Path;
 
-                    var segments = new List<SegmentRectangle>(path.Segments.Count);
+                    var rectangles = new List<SegmentRectangle>(path.Segments.Count);
 
                     var currentPoint = path.Start;
                     foreach (var (direction, length) in path.Segments)
@@ -60,37 +60,38 @@ namespace GeneticPcb.ViewModels
                         var x = currentPoint.X;
                         var y = currentPoint.Y;
 
-                        uint width = 1;
-                        uint height = 1;
+                        var width = 1;
+                        var height = 1;
 
-                        const uint diff = 14;
+                        const int diff = 14;
 
-                        if (direction == Direction.Up)
+                        switch (direction)
                         {
-                            y -= length;
-                            height = length + 1;
-                        }
-                        else if (direction == Direction.Down)
-                        {
-                            height = length + 1;
-                        }
-                        else if (direction == Direction.Left)
-                        {
-                            x -= length;
-                            width = length + 1;
-                        }
-                        else if (direction == Direction.Right)
-                        {
-                            width = length + 1;
+                            case Direction.Up:
+                                y -= length;
+                                height = length + 1;
+                                break;
+                            case Direction.Down:
+                                height = length + 1;
+                                break;
+                            case Direction.Left:
+                                x -= length;
+                                width = length + 1;
+                                break;
+                            case Direction.Right:
+                                width = length + 1;
+                                break;
+                            default:
+                                throw new ArgumentOutOfRangeException();
                         }
 
-                        segments.Add(new SegmentRectangle(x * 32 + diff, y * 32 + diff, width * 32 - diff * 2,
+                        rectangles.Add(new SegmentRectangle(x * 32 + diff, y * 32 + diff, width * 32 - diff * 2,
                             height * 32 - diff * 2));
 
                         currentPoint = endPoint;
                     }
 
-                    return segments;
+                    return rectangles;
                 });
 
                 Segments.Clear();
@@ -137,14 +138,14 @@ namespace GeneticPcb.ViewModels
 
                 var routes = new List<Route>();
 
-                for (int i = 1; i < contents.Length; i++)
+                for (var i = 1; i < contents.Length; i++)
                 {
                     var coords = contents[i].Split(";");
 
-                    var x1 = uint.Parse(coords[0]);
-                    var y1 = uint.Parse(coords[1]);
-                    var x2 = uint.Parse(coords[2]);
-                    var y2 = uint.Parse(coords[3]);
+                    var x1 = int.Parse(coords[0]);
+                    var y1 = int.Parse(coords[1]);
+                    var x2 = int.Parse(coords[2]);
+                    var y2 = int.Parse(coords[3]);
 
                     routes.Add(new Route(new BoardPoint(x1, y1), new BoardPoint(x2, y2)));
                 }
