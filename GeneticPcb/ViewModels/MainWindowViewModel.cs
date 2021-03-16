@@ -103,6 +103,90 @@ namespace GeneticPcb.ViewModels
 
         public ObservableCollection<SegmentRectangle> Segments { get; }
 
+        #region Genetic Parameters
+
+        private int _generations = 1000;
+
+        public int Generations
+        {
+            get => _generations;
+            set => this.RaiseAndSetIfChanged(ref _generations, value);
+        }
+        
+        private int _population = 100;
+
+        public int Population
+        {
+            get => _population;
+            set => this.RaiseAndSetIfChanged(ref _population, value);
+        }
+        
+        private int _mutationChance = 75;
+
+        public int MutationChance
+        {
+            get => _mutationChance;
+            set => this.RaiseAndSetIfChanged(ref _mutationChance, value);
+        }
+        
+        private int _insertChance = 50;
+
+        public int InsertChance
+        {
+            get => _insertChance;
+            set => this.RaiseAndSetIfChanged(ref _insertChance, value);
+        }
+        
+        private int _lengthWeight = HackyUglySingleton.LengthWeight;
+
+        public int LengthWeight
+        {
+            get => _lengthWeight;
+            set
+            {
+                HackyUglySingleton.LengthWeight = value;
+                this.RaiseAndSetIfChanged(ref _lengthWeight, value);
+            }
+        }
+        
+        private int _segmentWeight = HackyUglySingleton.SegmentWeight;
+
+        public int SegmentWeight
+        {
+            get => _segmentWeight;
+            set
+            {
+                HackyUglySingleton.SegmentWeight = value;
+                this.RaiseAndSetIfChanged(ref _segmentWeight, value);
+            }
+        }
+        
+        private int _intersectionWeight = HackyUglySingleton.IntersectionWeight;
+
+        public int IntersectionWeight
+        {
+            get => _intersectionWeight;
+            set
+            {
+                HackyUglySingleton.IntersectionWeight = value;
+                this.RaiseAndSetIfChanged(ref _intersectionWeight, value);
+            }
+        }
+        
+        private int _outOfBoundsWeight = HackyUglySingleton.OutOfBoundsWeight;
+
+        public int OutOfBoundsWeight
+        {
+            get => _outOfBoundsWeight;
+            set
+            {
+                HackyUglySingleton.OutOfBoundsWeight = value;
+                this.RaiseAndSetIfChanged(ref _outOfBoundsWeight, value);
+            }
+        }
+
+        #endregion
+
         public MainWindowViewModel()
         {
             var routes = new Route[]
@@ -123,7 +207,7 @@ namespace GeneticPcb.ViewModels
         public async Task LoadPcbSpecification()
         {
             var fileDialog = new OpenFileDialog();
-            var result = await fileDialog.ShowAsync(HackyUglySingleton.MainWindow);
+            var result = await fileDialog.ShowAsync(HackyUglyStaticHelper.MainWindow);
 
             if (result != null && result.Any())
             {
@@ -159,7 +243,7 @@ namespace GeneticPcb.ViewModels
             var random = new Random(13);
             var solver = new GeneticSolver(random, CircuitBoard);
 
-            CircuitBoard = solver.Solve(10000   , 100);
+            CircuitBoard = solver.Solve(Generations, Population, MutationChance, InsertChance);
         }
     }
 }

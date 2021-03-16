@@ -152,5 +152,12 @@ namespace GeneticPcb.Core.Models
 
             _segments.Add(new Segment(direction, length));
         }
+
+        public void Clear()
+        {
+            _segments.Clear();
+            Optimize();
+            Recalculate();
+        }
     }
 }

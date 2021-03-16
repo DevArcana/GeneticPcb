@@ -33,8 +33,51 @@
             </MenuItem>
         </Menu>
         
-        <StackPanel DockPanel.Dock="Left">
-            <TextBlock Text="{Binding CircuitBoard.Fitness}" />
+        <StackPanel Width="120" DockPanel.Dock="Left">
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Fitness" HorizontalAlignment="Center" />
+                <TextBlock HorizontalAlignment="Center" Text="{Binding CircuitBoard.Fitness}" />
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Generations" HorizontalAlignment="Center" />
+                <NumericUpDown Value="{Binding Generations}"></NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Population Size" HorizontalAlignment="Center" />
+                <NumericUpDown Value="{Binding Population}"></NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Mutation Chance (%)" HorizontalAlignment="Center" />
+                <NumericUpDown Value="{Binding MutationChance}"></NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Insert Chance (%)" HorizontalAlignment="Center" />
+                <NumericUpDown Value="{Binding InsertChance}"></NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Length Weight" HorizontalAlignment="Center" />
+                <NumericUpDown Value="{Binding LengthWeight}"></NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Segment Count Weight" HorizontalAlignment="Center" />
+                <NumericUpDown Value="{Binding SegmentWeight}"></NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="Intersection Weight" HorizontalAlignment="Center" />
+                <NumericUpDown Value="{Binding IntersectionWeight}"></NumericUpDown>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="OOB Weight" HorizontalAlignment="Center" />
+                <NumericUpDown Value="{Binding OutOfBoundsWeight}"></NumericUpDown>
+            </StackPanel>
         </StackPanel>
         
         <Panel>

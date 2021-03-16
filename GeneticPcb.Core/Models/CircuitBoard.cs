@@ -25,7 +25,7 @@ namespace GeneticPcb.Core.Models
             return this with {Routes = routes};
         }
 
-        private int CountIntersections()
+        private long CountIntersectionsPenalty()
         {
             var matrix = new byte[Width * Height];
             var outOfBounds = 0;
@@ -121,7 +121,7 @@ namespace GeneticPcb.Core.Models
                 }
             }
             
-            return matrix.Count(x => x > 1) + outOfBounds;
+            return matrix.Count(x => x > 1) * HackyUglySingleton.IntersectionWeight + outOfBounds * HackyUglySingleton.OutOfBoundsWeight;
         }
 
         public long CalculateFitness() {
@@ -132,18 +132,19 @@ namespace GeneticPcb.Core.Models
                 var segments = route.Path.Segments.Count;
                 var length = route.Path.Segments.Sum(x => x.Length);
 
-                fitness += length;
-                fitness += segments * 10;
+                fitness += length * HackyUglySingleton.LengthWeight;
+                fitness += segments * HackyUglySingleton.SegmentWeight;
 
                 if (!route.IsConnected)
                 {
+                    // should not happen
                     var dx = (long) route.End.X - route.Path.End.X;
                     var dy = (long) route.End.Y - route.Path.End.Y;
                     fitness += 1000 * (dx*dx + dy*dy);
                 }
             }
 
-            fitness += CountIntersections() * 100;
+            fitness += CountIntersectionsPenalty();
 
             Fitness = fitness;
             return fitness;

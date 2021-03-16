@@ -2,7 +2,7 @@
 
 namespace GeneticPcb
 {
-    public static class HackyUglySingleton
+    public class HackyUglyStaticHelper
     {
         public static Window MainWindow { get; set; }
     }

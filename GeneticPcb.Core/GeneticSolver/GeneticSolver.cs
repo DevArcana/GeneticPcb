@@ -23,6 +23,11 @@ namespace GeneticPcb.Core.GeneticSolver
       for (var i = 0; i < size; i++)
       {
         boards[i] = _board.Copy();
+
+        foreach (var route in boards[i].Routes)
+        {
+          route.Path.Clear();
+        }
       }
       
       return boards;
@@ -66,9 +71,7 @@ namespace GeneticPcb.Core.GeneticSolver
 
         for (int j = 0; j < mom.Routes.Length; j++)
         {
-          var shouldSwap = _random.Next() % 2 == 0;
-
-          if (shouldSwap)
+          if (j % 2 == 0)
           {
             var route = dad.Routes[j];
             dad.Routes[j] = mom.Routes[j];
@@ -80,19 +83,19 @@ namespace GeneticPcb.Core.GeneticSolver
       return population;
     }
 
-    private CircuitBoard[] Mutation(CircuitBoard[] population)
+    private CircuitBoard[] Mutation(CircuitBoard[] population, int mutationChance, int insertChance)
     {
       foreach (var genome in population)
       {
         foreach (var route in genome.Routes)
         {
-          var shouldMutate = _random.Next(0, 100);
+          var shouldMutate = _random.Next(0, 101);
 
-          // if (shouldMutate <= 50) continue;
+          if (shouldMutate > mutationChance) continue;
           
-          var mutationType = _random.Next();
+          var mutationType = _random.Next(0, 101);
 
-          if (mutationType % 2 == 0)
+          if (mutationType <= insertChance)
           {
             // insert segment
             if (route.IsConnected)
@@ -118,14 +121,14 @@ namespace GeneticPcb.Core.GeneticSolver
 
               var length = direction switch
               {
-                Direction.Up => route.Path.End.Y,
-                Direction.Down => _board.Height - route.Path.End.Y,
-                Direction.Left => route.Path.End.X,
-                Direction.Right => _board.Width - route.Path.End.X,
+                Direction.Up => route.Path.End.Y - route.End.Y,
+                Direction.Down => route.End.Y - route.Path.End.Y,
+                Direction.Left => route.Path.End.X - route.End.X,
+                Direction.Right => route.End.X - route.Path.End.X,
                 _ => 0
               };
 
-              route.Path.InsertSegment(where, direction, _random.Next(1, length));
+              route.Path.AddSegment(direction, length);
             }
           }
           else if (route.Path.Segments.Any())
@@ -139,7 +142,7 @@ namespace GeneticPcb.Core.GeneticSolver
       return population;
     }
     
-    public CircuitBoard Solve(int generations, int populationSize)
+    public CircuitBoard Solve(int generations, int populationSize, int mutationChance, int insertChance)
     {
       var population = CreateInitialPopulation(populationSize);
 
@@ -150,7 +153,7 @@ namespace GeneticPcb.Core.GeneticSolver
         generations--;
         population = Selection(population);
         population = Crossover(population);
-        population = Mutation(population);
+        population = Mutation(population, mutationChance, insertChance);
         
         var bestInPopulationFitness = population.Min(x => x.CalculateFitness());
         var bestInPopulation = population.FirstOrDefault(x => x.Fitness == bestInPopulationFitness);
