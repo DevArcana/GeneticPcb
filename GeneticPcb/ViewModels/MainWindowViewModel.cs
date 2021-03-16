@@ -240,7 +240,7 @@ namespace GeneticPcb.ViewModels
 
         public void SolveGenetically()
         {
-            var random = new Random(13);
+            var random = new Random();
             var solver = new GeneticSolver(random, CircuitBoard);
 
             CircuitBoard = solver.Solve(Generations, Population, MutationChance, InsertChance);
