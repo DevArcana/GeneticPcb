@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using GeneticPcb.Core.Models;
+using GeneticPcb.Display;
 
 namespace GeneticPcb.Core.GeneticSolver
 {
@@ -144,13 +145,13 @@ namespace GeneticPcb.Core.GeneticSolver
     
     public CircuitBoard Solve(int generations, int populationSize, int mutationChance, int insertChance)
     {
+      PcbImageWriter.ResetSolutions();
+      
       var population = CreateInitialPopulation(populationSize);
 
       var solutions = new List<CircuitBoard>(generations);
 
-      while (generations > 0)
-      {
-        generations--;
+      for (var i = 0; i < generations; i++) {
         population = Selection(population);
         population = Crossover(population);
         population = Mutation(population, mutationChance, insertChance);
@@ -158,6 +159,7 @@ namespace GeneticPcb.Core.GeneticSolver
         var bestInPopulationFitness = population.Min(x => x.CalculateFitness());
         var bestInPopulation = population.FirstOrDefault(x => x.Fitness == bestInPopulationFitness);
         
+        PcbImageWriter.SaveSolution(bestInPopulation, i);
         solutions.Add(bestInPopulation);
       }
       
