@@ -4,10 +4,9 @@
     <projectFile>GeneticPcb/GeneticPcb.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="do not keep constant seed">
+    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="implement image generation">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Display/PcbImageWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Display/PcbImageWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/GeneticPcb.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/GeneticPcb.Core.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/GeneticPcb.Core/Models/BoardPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/6A/InpcPropertyAccessorPlugin.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/C9/Random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/316AB451-6B81-40E7-B94D-342A1F91D04E/8/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/56/BindingExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/piotr/source/repos/GeneticPcb/GeneticPcb/ViewModels/MainWindowViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/316AB451-6B81-40E7-B94D-342A1F91D04E/14/Image.cs" root0="SKIP_HIGHLIGHTING" />
@@ -121,7 +121,7 @@
       <workItem from="1615543908786" duration="13637000" />
       <workItem from="1615821390560" duration="3631000" />
       <workItem from="1615909722838" duration="247000" />
-      <workItem from="1615910322428" duration="5650000" />
+      <workItem from="1615910322428" duration="7495000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1615537973125</created>
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615921620253</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="implement image generation">
+      <created>1615923440807</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1615923440807</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +257,8 @@
     <MESSAGE value="add crossover" />
     <MESSAGE value="fix mutation" />
     <MESSAGE value="do not keep constant seed" />
-    <option name="LAST_COMMIT_MESSAGE" value="do not keep constant seed" />
+    <MESSAGE value="implement image generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement image generation" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

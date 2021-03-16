@@ -28,6 +28,13 @@ namespace GeneticPcb.Core.GeneticSolver
         foreach (var route in boards[i].Routes)
         {
           route.Path.Clear();
+          
+          var limit = _random.Next(1, 10);
+          for (int j = 0; j < limit; j++)
+          {
+            route.Path.AddSegment((Direction) _random.Next(0, 4), _random.Next(1, 10));
+          }
+          
         }
       }
       

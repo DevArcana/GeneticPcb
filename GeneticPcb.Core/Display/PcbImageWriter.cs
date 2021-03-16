@@ -9,11 +9,22 @@ namespace GeneticPcb.Display
     {
         private static void DrawRectangle(this Bitmap bitmap, int x, int y, int w, int h, Color color)
         {
+            if (x < 0 || y < 0 || x > bitmap.Width || y > bitmap.Height || x + w > bitmap.Width || y + h > bitmap.Height)
+            {
+                color = Color.Red;
+            }
+
             for (var i = 0; i < w; i++)
             {
                 for (var j = 0; j < h; j++)
                 {
-                    bitmap.SetPixel(x + i, y + j, color);
+                    var px = x + i;
+                    var py = y + j;
+                    
+                    if (px >= 0 && px < bitmap.Width && py >= 0 && py < bitmap.Height)
+                    {
+                        bitmap.SetPixel(px, py, color);
+                    }
                 }
             }
         }
