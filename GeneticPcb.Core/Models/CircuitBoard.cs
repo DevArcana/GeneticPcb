@@ -6,6 +6,7 @@ namespace GeneticPcb.Core.Models
     public sealed record CircuitBoard (int Width, int Height, Route[] Routes)
     {
         public long Fitness { get; private set; }
+        public bool HasIntersections { get; private set; }
         
         public CircuitBoard Copy()
         {
@@ -144,7 +145,11 @@ namespace GeneticPcb.Core.Models
                 }
             }
 
-            fitness += CountIntersectionsPenalty();
+            var penalty = CountIntersectionsPenalty();
+
+            HasIntersections = penalty > 0;
+            
+            fitness += penalty;
 
             Fitness = fitness;
             return fitness;

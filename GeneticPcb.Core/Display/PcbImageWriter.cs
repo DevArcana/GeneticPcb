@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using GeneticPcb.Core.Models;
 
-namespace GeneticPcb.Display
+namespace GeneticPcb.Core.Display
 {
     public static class PcbImageWriter
     {

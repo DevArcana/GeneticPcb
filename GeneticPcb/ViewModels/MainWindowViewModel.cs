@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using DynamicData;
+using GeneticPcb.Core;
 using GeneticPcb.Core.GeneticSolver;
 using GeneticPcb.Core.Models;
 using GeneticPcb.Models;
@@ -105,7 +106,7 @@ namespace GeneticPcb.ViewModels
 
         #region Genetic Parameters
 
-        private int _generations = 1000;
+        private int _generations = 100;
 
         public int Generations
         {
@@ -113,7 +114,7 @@ namespace GeneticPcb.ViewModels
             set => this.RaiseAndSetIfChanged(ref _generations, value);
         }
         
-        private int _population = 100;
+        private int _population = 20;
 
         public int Population
         {
@@ -121,7 +122,7 @@ namespace GeneticPcb.ViewModels
             set => this.RaiseAndSetIfChanged(ref _population, value);
         }
         
-        private int _mutationChance = 75;
+        private int _mutationChance = 90;
 
         public int MutationChance
         {
@@ -129,7 +130,7 @@ namespace GeneticPcb.ViewModels
             set => this.RaiseAndSetIfChanged(ref _mutationChance, value);
         }
         
-        private int _insertChance = 50;
+        private int _insertChance = 90;
 
         public int InsertChance
         {
@@ -243,7 +244,7 @@ namespace GeneticPcb.ViewModels
             var random = new Random();
             var solver = new GeneticSolver(random, CircuitBoard);
 
-            CircuitBoard = solver.Solve(Generations, Population, MutationChance, InsertChance);
+            CircuitBoard = solver.SolveTenFold(Generations, Population, MutationChance, InsertChance);
         }
     }
 }
