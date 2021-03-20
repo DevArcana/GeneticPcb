@@ -4,13 +4,11 @@
     <projectFile>GeneticPcb/GeneticPcb.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GeneticPcb.Core/RandomSolver/RandomSolver.cs" afterDir="false" />
+    <list default="true" id="0fd2f27e-64bc-439a-bbdb-6d29a897f400" name="Default Changelist" comment="improve">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GeneticPcb/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/HackyUglySingleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/HackyUglySingleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb.Core/RandomSolver/RandomSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb.Core/RandomSolver/RandomSolver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +39,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/037A60A8-7C28-4EB4-A4C5-6DDDC0E08279/56/BindingExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/316AB451-6B81-40E7-B94D-342A1F91D04E/14/Image.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GeneticPcb.Core/Display/PcbImageWriter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/piotr/source/repos/GeneticPcb/GeneticPcb.Core/Models/CircuitBoard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/901D0287-899F-4379-87F8-8FB13D3BE845/A/AppBuilderBase.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -63,14 +62,14 @@
       <option value="$PROJECT_DIR$/GeneticPcb/Converters/PcbDimensionsConverter.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/Path.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/GeneticParameters.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" />
       <option value="$PROJECT_DIR$/GeneticPcb/HackyUglySingleton.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb/HackyUglyStaticHelper.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Display/PcbImageWriter.cs" />
-      <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/HackyUglySingleton.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/Models/CircuitBoard.cs" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/GeneticSolver/GeneticSolver.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/ViewModels/MainWindowViewModel.cs" />
+      <option value="$PROJECT_DIR$/GeneticPcb/Views/MainWindow.axaml" />
       <option value="$PROJECT_DIR$/GeneticPcb.Core/RandomSolver/RandomSolver.cs" />
     </changedPaths>
   </component>
@@ -126,7 +125,7 @@
       <workItem from="1615910322428" duration="8898000" />
       <workItem from="1616069822922" duration="5302000" />
       <workItem from="1616080865971" duration="754000" />
-      <workItem from="1616275185079" duration="215000" />
+      <workItem from="1616275185079" duration="1341000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1615537973125</created>
@@ -233,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615925075215</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="improve">
+      <created>1616275423534</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1616275423534</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +277,8 @@
     <MESSAGE value="do not keep constant seed" />
     <MESSAGE value="implement image generation" />
     <MESSAGE value="fix crash" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix crash" />
+    <MESSAGE value="improve" />
+    <option name="LAST_COMMIT_MESSAGE" value="improve" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

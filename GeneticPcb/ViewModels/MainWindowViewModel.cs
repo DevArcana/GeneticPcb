@@ -10,6 +10,7 @@ using DynamicData;
 using GeneticPcb.Core;
 using GeneticPcb.Core.GeneticSolver;
 using GeneticPcb.Core.Models;
+using GeneticPcb.Core.RandomSolver;
 using GeneticPcb.Models;
 using ReactiveUI;
 
@@ -245,6 +246,14 @@ namespace GeneticPcb.ViewModels
             var solver = new GeneticSolver(random, CircuitBoard);
 
             CircuitBoard = solver.SolveTenFold(Generations, Population, MutationChance, InsertChance);
+        }
+        
+        public void SolveRandomly()
+        {
+            var random = new Random();
+            var solver = new RandomSolver(random, CircuitBoard);
+
+            CircuitBoard = solver.Solve(Generations * Population * 10);
         }
     }
 }
