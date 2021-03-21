@@ -85,9 +85,9 @@
             <Panel Background="#FFF5F5F5" />
             <Panel Background="{DynamicResource CheckerBoard}" />
         
-            <Panel ClipToBounds="True">
+            <Panel ClipToBounds="False">
                 <ScrollViewer x:Name="EditAreaScrollViewer" HorizontalScrollBarVisibility="Auto"
-                              VerticalScrollBarVisibility="Auto">
+                              VerticalScrollBarVisibility="Auto" ClipToBounds="False">
                     <panAndZoom:ZoomBorder x:Name="EditAreaZoomBorder"
                                            Stretch="None"
                                            ZoomSpeed="1.2"
@@ -98,7 +98,7 @@
                                            ClipToBounds="False"
                                            VerticalAlignment="Stretch"
                                            HorizontalAlignment="Stretch">
-                        <views:PcbBoardView HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <views:PcbBoardView HorizontalAlignment="Center" VerticalAlignment="Center" ClipToBounds="False" />
                     </panAndZoom:ZoomBorder>
                 </ScrollViewer>
             </Panel>

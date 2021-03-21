@@ -168,11 +168,11 @@ namespace GeneticPcb.Core.GeneticSolver
                   _ => 0
                 };
 
-                route.Path.InsertSegment(where, direction, _random.Next(1, length), true);
+                route.Path.InsertSegment(where, direction, _random.Next(1, length), true, _random.Next(0, route.Path.Segments.Count));
               }
               else
               {
-                route.Path.DeleteSegment(_random.Next(0, route.Path.Segments.Count), true);
+                route.Path.DeleteSegment(_random.Next(0, route.Path.Segments.Count), true, _random.Next(0, route.Path.Segments.Count));
               }
             }
           }
@@ -193,7 +193,7 @@ namespace GeneticPcb.Core.GeneticSolver
         solutions.Add(Solve(generations, populationSize, mutationChance, insertChance));
       }
       
-      solutions.Add(Solve(generations, populationSize, mutationChance, insertChance, true));
+      solutions.Add(Solve(generations, populationSize, mutationChance, insertChance, false));
 
       var worstFitness = solutions.Max(x => x.Fitness);
       var bestFitness = solutions.Min(x => x.Fitness);

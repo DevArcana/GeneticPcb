@@ -72,7 +72,7 @@ namespace GeneticPcb.Core.RandomSolver
                     _ => 0
                 };
                 
-                route.Path.InsertSegment(segmentIndex, direction, length, true);
+                route.Path.InsertSegment(segmentIndex, direction, length, true, _random.Next(0, route.Path.Segments.Count));
             }
             
             return board;

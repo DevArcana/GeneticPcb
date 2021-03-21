@@ -36,16 +36,17 @@ namespace GeneticPcb.Core.Models
                     continue;
                 }
 
-                if (previous.Direction == segment.Direction)
-                {
-                    previous = previous with {Length = previous.Length + segment.Length};
-                    _segments[i - 1] = previous;
-                    
-                    _segments.RemoveAt(i);
-                    i--;
-                    count--;
-                }
-                else if (previous.Direction == segment.Direction.Opposite())
+                // if (previous.Direction == segment.Direction)
+                // {
+                //     previous = previous with {Length = previous.Length + segment.Length};
+                //     _segments[i - 1] = previous;
+                //     
+                //     _segments.RemoveAt(i);
+                //     i--;
+                //     count--;
+                // }
+                // else
+                if (previous.Direction == segment.Direction.Opposite())
                 {
                     if (previous.Length > segment.Length)
                     {
@@ -102,21 +103,28 @@ namespace GeneticPcb.Core.Models
             }
         }
 
-        public void DeleteSegment(int i, bool conserveEnd = false)
+        public void DeleteSegment(int i, bool conserveEnd = false, int conserveAt = -1)
         {
             var segment = _segments[i];
             _segments.RemoveAt(i);
 
             if (conserveEnd)
             {
-                _segments.Add(segment);
+                if (conserveAt == -1)
+                {
+                    _segments.Add(segment);
+                }
+                else
+                {
+                    _segments.Insert(conserveAt, segment);
+                }
             }
             
             Optimize();
             Recalculate();
         }
         
-        public void InsertSegment(int i, Direction direction, int length, bool conserveEnd = false)
+        public void InsertSegment(int i, Direction direction, int length, bool conserveEnd = false, int conserveAt = -1)
         {
             if (length <= 0)
             {
@@ -127,7 +135,14 @@ namespace GeneticPcb.Core.Models
 
             if (conserveEnd)
             {
-                _segments.Add(new Segment(direction.Opposite(), length));
+                if (conserveAt == -1)
+                {
+                    _segments.Add(new Segment(direction.Opposite(), length));
+                }
+                else
+                {
+                    _segments.Insert(conserveAt, new Segment(direction.Opposite(), length));
+                }
             }
             
             Optimize();
